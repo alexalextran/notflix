@@ -5,6 +5,11 @@ html {
   font-family: "Source Sans Pro", sans-serif;
 }
 
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -35,7 +40,7 @@ nav .nav__right {
       -ms-flex-direction: row;
           flex-direction: row;
   width: 200px;
-  font-size: 20px;
+  font-size: 22px;
   margin-right: 5rem;
 }
 
@@ -80,5 +85,30 @@ nav .navigation__links ul li {
 
 nav .navigation__links img {
   width: clamp(100px, 5vw, 150px);
+}
+
+.card img {
+  width: 19vw;
+  margin-right: 1vw;
+}
+
+.trending {
+  font-size: 1vw;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0px 30px;
+}
+
+.trending div:nth-child(2) {
+  width: 100%;
+  overflow: hidden;
+}
+
+.trending .tending__cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 /*# sourceMappingURL=App.css.map */

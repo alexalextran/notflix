@@ -5,8 +5,11 @@
 html{
     background-color: $backgroundColor;
     color: $mainTextColor;
-    font-family: $font-stack;
-    
+    font-family: $font-stack;  
+}
+
+*{
+    box-sizing: border-box;
 }
 
 nav{
@@ -15,7 +18,7 @@ nav{
     .nav__right{
         @include flexCustom(space-around, center, row);
         width: 200px;
-        font-size: 20px;
+        font-size: 22px;
         margin-right: 5rem
     }
 
@@ -41,4 +44,26 @@ nav{
        width: clamp(100px, 5vw, 150px)
     }
 }
+}
+
+.card{
+   img{
+       width: 19vw;
+       margin-right: 1vw;
+   }
+}
+
+.trending{
+    font-size: 1vw;
+    flex-direction: column;
+    padding: 0px 30px;
+   
+   & div:nth-child(2){
+        width: 100%;
+        overflow: hidden;
+     
+    }
+    .tending__cards{
+      display: flex;
+    }
 }
