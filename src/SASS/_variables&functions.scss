@@ -1,0 +1,16 @@
+$backgroundColor: rgb(20,20,20);
+$mainTextColor: rgb(221,221,221);
+
+
+@mixin flexCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flexCustom ($jc, $ai, $fd ) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    flex-direction: $fd;
+}

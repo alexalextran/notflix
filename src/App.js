@@ -1,17 +1,26 @@
 
-import React, { Component } from 'react';
-import './App.css';
+import React from 'react';
+import './SASS/App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Homepage from './Pages/HomePage';
+import Nav from './Components/Nav';
 
-
+console.log(process.env.REACT_APP_API_KEY)
 function App() {
 
-
- 
-
   return (
-   <div>
 
-   </div>
+    <div className="App">
+      <Nav />
+      <Routes> 
+        
+        <Route  path="/" element={<Homepage />} />
+      
+      </Routes>
+   
+  
+    </div>
+
   );
 }
 
