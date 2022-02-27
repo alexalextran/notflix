@@ -1,11 +1,13 @@
 $backgroundColor: rgb(20,20,20);
 $mainTextColor: rgb(221,221,221);
+$font-stack: 'Source Sans Pro', sans-serif;
 
 
-@mixin flexCenter{
+@mixin flexCenter($direction){
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: $direction;
 }
 
 @mixin flexCustom ($jc, $ai, $fd ) {
