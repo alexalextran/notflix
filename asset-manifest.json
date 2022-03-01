@@ -1,14 +1,16 @@
 {
   "files": {
-    "main.css": "/notflix/static/css/main.31d6cfe0.css",
-    "main.js": "/notflix/static/js/main.4a9a41d9.js",
+    "main.css": "/notflix/static/css/main.3744a150.css",
+    "main.js": "/notflix/static/js/main.dcd28be2.js",
     "static/js/787.089d247b.chunk.js": "/notflix/static/js/787.089d247b.chunk.js",
+    "static/media/netflix.svg": "/notflix/static/media/netflix.c8479ece65f26b534b403d0973ab101d.svg",
     "index.html": "/notflix/index.html",
-    "main.4a9a41d9.js.map": "/notflix/static/js/main.4a9a41d9.js.map",
+    "main.3744a150.css.map": "/notflix/static/css/main.3744a150.css.map",
+    "main.dcd28be2.js.map": "/notflix/static/js/main.dcd28be2.js.map",
     "787.089d247b.chunk.js.map": "/notflix/static/js/787.089d247b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.31d6cfe0.css",
-    "static/js/main.4a9a41d9.js"
+    "static/css/main.3744a150.css",
+    "static/js/main.dcd28be2.js"
   ]
 }
