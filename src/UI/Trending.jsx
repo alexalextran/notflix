@@ -1,37 +1,37 @@
-import axios from 'axios';
+
 import React, { useEffect, useState } from 'react';
 import Card from './Card';
+import Categorywrapper from './CategoryWrapper';
 
 const Trending = (props) => {
     const [jsondata, setjsondata] = useState([]);
+    const [loading, setloading] = useState(true);
 
-    async function gettrending  (){
-        var {data} = await axios.get(`https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_API_KEY}`)
-        setjsondata(data.results)
-        console.log("bruh")
+    async function awaitdata(){
+        props.fn("tending").then(
+          (resolved) =>  {setjsondata(resolved.data.results)
+             setloading(false)
+          }
+        )
     }
+ 
+    console.log(jsondata)
     useEffect(() => {
-        gettrending()
-       
+        awaitdata()
     }, []);
 
-   
-    console.log(jsondata)
+    const skeleton = () =>{
+        if(loading == false){
+            return jsondata.map(element => <Card key={element.id} img={element.backdrop_path} />)
+        }
+        else{
+            return "loading"
+        }
 
+    }
 
     return (
-        <section className='trending'>
-        <h1>{props.title}</h1>
-        <div className='card__wrapper'>
-
-        
-        <div className='tending__cards'>
-            {
-                jsondata.map(element => <Card key={element.id}img={element.backdrop_path} />)
-            }
-        </div>
-            </div>
-        </section>
+       <Categorywrapper title="Trending" skeleton={skeleton}/>
     );
 }
 
