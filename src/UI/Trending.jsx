@@ -15,23 +15,15 @@ const Trending = (props) => {
         )
     }
  
-    console.log(jsondata)
     useEffect(() => {
         awaitdata()
-    }, []);
+    }, [loading]);
 
-    const skeleton = () =>{
-        if(loading == false){
-            return jsondata.map(element => <Card key={element.id} img={element.backdrop_path} />)
-        }
-        else{
-            return "loading"
-        }
 
-    }
+
 
     return (
-       <Categorywrapper title="Trending" skeleton={skeleton}/>
+       <Categorywrapper title="Trending" skeleton={props.skeleton(jsondata)}/>
     );
 }
 
