@@ -1,23 +1,19 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Categorywrapper from './CategoryWrapper';
 
-
-const Korean = (props) => {
+const Horror = (props) => {
     const [jsondata, setjsondata] = useState([]);
     const [loading, setloading] = useState(true);
-    
 
     async function awaitdata(){
         props.fn(props.search).then(
           (resolved) =>  {setjsondata(resolved.data.results)
+             setloading(false)
           }
         )
     }
 
-  
-      
-
+   
     useEffect(() => {
         awaitdata()
     }, [loading]);
@@ -30,4 +26,4 @@ const Korean = (props) => {
     );
 }
 
-export default Korean;
+export default Horror;

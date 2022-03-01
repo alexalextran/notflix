@@ -90,6 +90,7 @@ nav .navigation__links img {
 .card img {
   width: 19vw;
   margin-right: 1vw;
+  border-radius: 8px;
 }
 
 .trending {
