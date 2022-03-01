@@ -9,7 +9,7 @@ const Categorywrapper = (props) => {
         
         <div className='tending__cards'>
             { 
-                props.skeleton
+                props.loadingstate
             }
         </div>
             </div>

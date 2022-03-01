@@ -1,8 +1,8 @@
+
 import React, { useEffect, useState } from 'react';
 import Categorywrapper from './CategoryWrapper';
 
-
-const Comdey = (props) => {
+const Romance = (props) => {
     const [jsondata, setjsondata] = useState([]);
     const [loading, setloading] = useState(true);
 
@@ -13,7 +13,8 @@ const Comdey = (props) => {
           }
         )
     }
- 
+
+   
     useEffect(() => {
         awaitdata()
     }, [loading]);
@@ -26,4 +27,4 @@ const Comdey = (props) => {
     );
 }
 
-export default Comdey;
+export default Romance;

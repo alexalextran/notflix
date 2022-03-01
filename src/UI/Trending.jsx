@@ -1,6 +1,5 @@
 
 import React, { useEffect, useState } from 'react';
-import Card from './Card';
 import Categorywrapper from './CategoryWrapper';
 
 const Trending = (props) => {
@@ -23,7 +22,7 @@ const Trending = (props) => {
 
 
     return (
-       <Categorywrapper title="Trending" skeleton={props.skeleton(jsondata)}/>
+       <Categorywrapper title={props.title} loadingstate={props.skeleton(jsondata)}/>
     );
 }
 
