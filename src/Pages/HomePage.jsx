@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Action from '../UI/Action';
 import Animation from '../UI/Animation';
 import Card from '../UI/Card';
@@ -11,6 +11,7 @@ import Trending from '../UI/Trending';
 
 
 const Homepage = () => {
+  
 
    
 
@@ -39,11 +40,26 @@ const Homepage = () => {
     }
 
     const skeleton = (state) =>{
+     
         if(state.length == 0){
             return "loading"
         }
         else{
-            return state.map(element => <Card key={element.id} id={element.id} img={element.backdrop_path} />)
+           
+            return state.map(element => {
+               
+                if(element.media_type == "movie"){
+                    var type = "movie"
+                }
+                else{
+                    type = "tv"
+                }
+
+            return(
+            <Card key={element.id} id={element.id} img={element.backdrop_path} type={type} />
+            )
+           
+            })
         }
     }
   

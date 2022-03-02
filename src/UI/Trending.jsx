@@ -13,6 +13,8 @@ const Trending = (props) => {
           }
         )
     }
+
+  
  
     useEffect(() => {
         awaitdata()
