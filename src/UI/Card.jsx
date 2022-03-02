@@ -28,7 +28,10 @@ const Card = (props) => {
 
     setdata(hehehaw.data);
     setloaded(true);
-    console.log(data)
+    
+    console.log(data.genres)
+
+
 
     if (data.images.backdrops.length !== 0) {
       setimg(data.images.backdrops[0].file_path);
@@ -86,8 +89,15 @@ const Card = (props) => {
             <div className="card__detailed--ra-name">
               {loaded ? <p>{name}</p> : "loading"}
               {loaded ? <p>Rating: {rating}</p> : "loading"}
-              
             </div>
+                { loaded ?
+                 ( data.genres.slice(0,3).map(element =>
+                  <p>{element.name}</p>
+                  ))
+                  : 
+                  "loading"
+                }
+           
             
           </div>
         </div>
