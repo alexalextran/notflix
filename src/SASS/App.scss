@@ -40,39 +40,65 @@ nav{
         }
     }
 
+     
+    }
     img{
        width: clamp(100px, 5vw, 150px)
     }
 }
-}
+
 
 .card{
     position: relative;
+    margin-right: 1vw;
    img{
        width: 19vw;
-       margin-right: 1vw;
        border-radius: 8px;
    }
+
+   &:hover > .card__detailed{
+      @include visible;
+      height: 300%;
+      width: 150%;
+   }
+
+   .card__detailed{
+    @include absolutecenter;
+    @include invisible;
+    @include flexCustom(center, center, column);
+    height: 100%;
+    width: 100%;
+    transition: all 300ms;
+   
+    background-color: rgb(126, 111, 111);
+ 
+    
+
+.card__detailed--image{
+    top: 0;
+    width: 100%;
+}
+   
+    
+}
+
 }
 
 .trending{
     font-size: 1vw;
     flex-direction: column;
-    padding: 0px 30px;
+    margin: 0px 30px;
+    width: 100VW;
+    height: 400px;
+    overflow-x: hidden;
+    overflow-y: visible;
+    white-space: nowrap;
    
-   & div:nth-child(2){
-        width: 100%;
-        overflow: hidden;
-     
-    }
+  
     .tending__cards{
       display: flex;
     }
 }
 
-.card__detailed{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    z-index: 2;
-}
+
+

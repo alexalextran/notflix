@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { ConeStriped } from 'react-bootstrap-icons';
+import { PlayCircleFill, PlusCircle, HandThumbsUp, HandThumbsDown } from 'react-bootstrap-icons';
 
 const Card = (props) => {
   const [data, setdata] = useState();
@@ -62,8 +62,20 @@ else{
           <img src={`https://image.tmdb.org/t/p/w500${props.img}`}></img> 
           
             <div className='card__detailed'>
-        {loaded ? name : "loading"}
-        {loaded ? <img src={`https://image.tmdb.org/t/p/w500${img}`}></img> : "loading"}
+    <div className='card__detailed--top'>
+       {loaded ? <img className='card__detailed--image' src={`https://image.tmdb.org/t/p/w500${img}`}></img> : "loading"}
+    </div>
+    <div>
+    <div className=''> 
+      <PlayCircleFill />
+      <PlusCircle />
+      <HandThumbsUp />
+      <HandThumbsDown />
+    </div>
+      {loaded ? <p>{name}</p> : "loading"}
+    </div>
+    
+       
         </div>
         </div>
 

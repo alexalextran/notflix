@@ -83,18 +83,60 @@ nav .navigation__links ul li {
   margin-right: 1.5rem;
 }
 
-nav .navigation__links img {
+nav img {
   width: clamp(100px, 5vw, 150px);
 }
 
 .card {
   position: relative;
+  margin-right: 1vw;
 }
 
 .card img {
   width: 19vw;
-  margin-right: 1vw;
   border-radius: 8px;
+}
+
+.card:hover > .card__detailed {
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+  height: 300%;
+  width: 150%;
+}
+
+.card .card__detailed {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  opacity: 0;
+  visibility: hidden;
+  z-index: -1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  width: 100%;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+  background-color: #7e6f6f;
+}
+
+.card .card__detailed .card__detailed--image {
+  top: 0;
+  width: 100%;
 }
 
 .trending {
@@ -103,24 +145,17 @@ nav .navigation__links img {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 0px 30px;
-}
-
-.trending div:nth-child(2) {
-  width: 100%;
-  overflow: hidden;
+  margin: 0px 30px;
+  width: 100VW;
+  height: 400px;
+  overflow-x: hidden;
+  overflow-y: visible;
+  white-space: nowrap;
 }
 
 .trending .tending__cards {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-.card__detailed {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  z-index: 2;
 }
 /*# sourceMappingURL=App.css.map */
