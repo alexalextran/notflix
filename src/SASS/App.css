@@ -101,8 +101,8 @@ nav img {
   opacity: 1;
   visibility: visible;
   z-index: 2;
-  height: 200%;
-  width: 130%;
+  height: 240%;
+  width: 135%;
 }
 
 .card .card__detailed {
@@ -184,6 +184,7 @@ nav img {
   width: 100%;
   padding: 0 20px;
   text-align: left;
+  font-size: 1.4em;
 }
 
 .card .card__detailed .card__detailed--bottom .card__detailed--ra-name > p:nth-child(1) {
