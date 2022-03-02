@@ -92,8 +92,8 @@ nav img {
   margin-right: 1vw;
 }
 
-.card img {
-  width: 19vw;
+.card > :first-child {
+  width: 17vw;
   border-radius: 8px;
 }
 
@@ -101,8 +101,8 @@ nav img {
   opacity: 1;
   visibility: visible;
   z-index: 2;
-  height: 300%;
-  width: 150%;
+  height: 200%;
+  width: 130%;
 }
 
 .card .card__detailed {
@@ -117,9 +117,9 @@ nav img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: top;
+      -ms-flex-pack: top;
+          justify-content: top;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -132,30 +132,63 @@ nav img {
   -webkit-transition: all 300ms;
   transition: all 300ms;
   background-color: #7e6f6f;
+  border-radius: 8px;
 }
 
-.card .card__detailed .card__detailed--image {
-  top: 0;
+.card .card__detailed .card__detailed--bottom {
+  width: 100%;
+}
+
+.card .card__detailed .card__detailed--bottom .card__detailed--icons {
+  font-size: 2em;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 20px;
+}
+
+.card .card__detailed .card__detailed--bottom .card__detailed--icons > div:first-child {
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.card .card__detailed .card__detailed--bottom .card__detailed--icons > div:nth-child(2) {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+.card .card__detailed .card__detailed--top .card__detailed--image {
   width: 100%;
 }
 
 .trending {
   font-size: 1vw;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin: 0px 30px;
+  margin: 0px 3vw;
   width: 100VW;
-  height: 400px;
-  overflow-x: hidden;
-  overflow-y: visible;
-  white-space: nowrap;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .trending .tending__cards {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.wrapper {
+  padding: 100px 0px;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 /*# sourceMappingURL=App.css.map */

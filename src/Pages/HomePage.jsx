@@ -68,13 +68,16 @@ const Homepage = () => {
     return (
         <div>
             HOMEPAGE!!!!!!!!!!!!!!
-            <Trending title="Trending Now" fn={gettrending} skeleton={skeleton} search={"trending"}/>
+            <div className='wrapper'>
+               <Trending title="Trending Now" fn={gettrending} skeleton={skeleton} search={"trending"}/>
             <Comdey title="Comedy" fn={gettrending} skeleton={skeleton} search={"35"}/>
             <Action title="Action" fn={gettrending} skeleton={skeleton} search={"28"}/>
             <Romance title="Romance" fn={gettrending} skeleton={skeleton} search={"10749"}/>
             <Korean title="Korean" fn={gettrending} skeleton={skeleton} search={"Korean"}/>
             <Horror title="Horror" fn={gettrending} skeleton={skeleton} search={"27"}/>
-            <Animation title="Animation" fn={gettrending} skeleton={skeleton} search={"16"}/>
+            <Animation title="Animation" fn={gettrending} skeleton={skeleton} search={"16"}/>  
+            </div>
+           
           
             
           
