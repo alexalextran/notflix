@@ -12,6 +12,7 @@ const Card = (props) => {
   const [data, setdata] = useState();
   const [name, setname] = useState();
   const [img, setimg] = useState();
+  const [rating, setrating] = useState();
   const [loaded, setloaded] = useState(false);
 
   const getDetails = async () => {
@@ -27,11 +28,18 @@ const Card = (props) => {
 
     setdata(hehehaw.data);
     setloaded(true);
+    console.log(data)
 
     if (data.images.backdrops.length !== 0) {
       setimg(data.images.backdrops[0].file_path);
     } else {
       setimg(props.img);
+    }
+
+    if (data.vote_average !== null || undefined) {
+      setrating(data.vote_average);
+    } else {
+      setrating("N/A");
     }
 
     if (data.original_name == undefined || null) {
@@ -75,8 +83,10 @@ const Card = (props) => {
             </div>
               
             </div>
-            <div>
+            <div className="card__detailed--ra-name">
               {loaded ? <p>{name}</p> : "loading"}
+              {loaded ? <p>Rating: {rating}</p> : "loading"}
+              
             </div>
             
           </div>

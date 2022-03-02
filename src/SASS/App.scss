@@ -1,142 +1,130 @@
 @import "./variables&functions";
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap");
 
-
-html{
-    background-color: $backgroundColor;
-    color: $mainTextColor;
-    font-family: $font-stack;  
+html {
+  background-color: $backgroundColor;
+  color: $mainTextColor;
+  font-family: $font-stack;
 }
 
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
-nav{
-    @include flexCustom(space-between, center, row);
+nav {
+  @include flexCustom(space-between, center, row);
 
-    .nav__right{
-        @include flexCustom(space-around, center, row);
-        width: 200px;
-        font-size: 22px;
-        margin-right: 5rem
-    }
+  .nav__right {
+    @include flexCustom(space-around, center, row);
+    width: 200px;
+    font-size: 22px;
+    margin-right: 5rem;
+  }
 
-.navigation__links{
+  .navigation__links {
     @include flexCustom(left, center, row);
     margin-left: 2rem;
 
-    .navicons{
-      
+    .navicons {
     }
 
-    ul{
-        @include flexCenter(row);
-        font-size: clamp(14px, 1vw, 18px);
+    ul {
+      @include flexCenter(row);
+      font-size: clamp(14px, 1vw, 18px);
 
-        li{
-            list-style: none;
-            margin-right: 1.5rem;
-        }
+      li {
+        list-style: none;
+        margin-right: 1.5rem;
+      }
     }
-
-     
-    }
-    img{
-       width: clamp(100px, 5vw, 150px)
-    }
+  }
+  img {
+    width: clamp(100px, 5vw, 150px);
+  }
 }
 
+.card {
+  position: relative;
+  margin-right: 1vw;
+  & > :first-child {
+    width: 17vw;
+    border-radius: 8px;
+  }
 
-.card{
-    position: relative;
-    margin-right: 1vw;
-   & > :first-child{
-       width: 17vw;
-       border-radius: 8px;
-   }
+  &:hover > .card__detailed {
+    @include visible;
+    height: 200%;
+    width: 130%;
+  }
 
-   &:hover > .card__detailed{
-      @include visible;
-      height: 200%;
-      width: 130%;
-   }
-
-   .card__detailed{
+  .card__detailed {
     @include absolutecenter;
     @include invisible;
     @include flexCustom(top, center, column);
     height: 100%;
     width: 100%;
     transition: all 300ms;
-    background-color: rgb(126, 111, 111);
+    background-color: $card;
     border-radius: 8px;
-   
-  
-  
 
-    .card__detailed--bottom{
-        width: 100%;
+    .card__detailed--bottom {
+      width: 100%;
 
-        .card__detailed--icons{
+      .card__detailed--icons {
         font-size: 2em;
         width: 100%;
         display: flex;
         padding: 0 20px;
-        
 
-        & > div:first-child{
-            width: 60%;
-            display: flex;
-            justify-content: space-around;
+        & > div:first-child {
+          width: 60%;
+          display: flex;
+          justify-content: space-around;
         }
-        & > div:nth-child(2){
-            width: 40%;
-            display: flex;
-            justify-content: end;
+        & > div:nth-child(2) {
+          width: 40%;
+          display: flex;
+          justify-content: end;
         }
+      }
+
+      .card__detailed--ra-name {
+        @include flexCustom(left, center, row);
+        width: 100%;
+        padding: 0 20px;
+        text-align: left;
+
+        & > p:nth-child(1) {
+          color: rgb(229, 9, 20);
+        }
+
+        & > p:nth-child(2) {
+          margin-left: 30px;
+        }
+      }
     }
+
+    .card__detailed--top {
+      .card__detailed--image {
+        width: 100%;
+      }
     }
-
-    
- 
-    
-.card__detailed--top{
-
-   
-
-.card__detailed--image{
-    width: 100%;
-}
+  }
 }
 
-   
-    
+.trending {
+  font-size: 1vw;
+  margin: 0px 3vw;
+  width: 100vw;
+  height: fit-content;
+
+  .tending__cards {
+    display: flex;
+  }
 }
 
-}
-
-.trending{
-    font-size: 1vw;
-    margin: 0px 3vw;
-    width: 100VW;
-    height: fit-content;
-    
-   
-
- 
-   
-  
-    .tending__cards{
-      display: flex;
-     
-    }
-}
-
-.wrapper{
+.wrapper {
   padding: 100px 0px;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
-
