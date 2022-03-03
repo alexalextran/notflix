@@ -5,13 +5,15 @@ import {
   PlusCircle,
   HandThumbsUp,
   HandThumbsDown,
- ArrowDownCircle,
+ CaretDownSquare,
+  StarFill,
 } from "react-bootstrap-icons";
 
 const Card = (props) => {
   const [data, setdata] = useState();
   const [name, setname] = useState();
   const [img, setimg] = useState();
+  const [runtime, setruntime] = useState();
   const [rating, setrating] = useState();
   const [loaded, setloaded] = useState(false);
 
@@ -28,11 +30,8 @@ const Card = (props) => {
 
     setdata(hehehaw.data);
     setloaded(true);
-    
-    console.log(data.genres)
-
-
-
+    console.log(data)
+  
     if (data.images.backdrops.length !== 0) {
       setimg(data.images.backdrops[0].file_path);
     } else {
@@ -50,6 +49,16 @@ const Card = (props) => {
     } else {
       setname(data.name);
     }
+
+    if (data.runtime !== (null || undefined)) {
+      setruntime(data.runtime + "min");
+    } else if (data.episode_run_time[0] !== (null || undefined)){
+      setruntime(data.episode_run_time  + "min") ;
+    } else{
+      setruntime(" ")
+    }
+
+
   };
 
   useEffect(() => {
@@ -82,18 +91,24 @@ const Card = (props) => {
               <HandThumbsDown />
             </div>
             <div>
-            <ArrowDownCircle />
+            <CaretDownSquare />
             </div>
               
             </div>
             <div className="card__detailed--ra-name">
               {loaded ? <p>{name}</p> : "loading"}
-              {loaded ? <p>Rating: {rating}</p> : "loading"}
+              {loaded ? <p> {rating} <div className="star-icon"><StarFill/></div>
+              <div>{runtime}</div>
+              
+              </p> : "loading"}
             </div>
                 { loaded ?
-                 ( data.genres.slice(0,3).map(element =>
-                  <p>{element.name}</p>
-                  ))
+                <ul>
+                   {( data.genres.slice(0,3).map(element =>
+                  <li>{element.name}</li>
+                  ))}
+                </ul>
+                
                   : 
                   "loading"
                 }
