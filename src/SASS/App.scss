@@ -40,6 +40,7 @@ nav {
   }
   img {
     width: clamp(100px, 5vw, 150px);
+  
   }
 }
 
@@ -49,6 +50,7 @@ nav {
   & > :first-child {
     width: 17vw;
     border-radius: 8px;
+   
   }
 
   &:hover > .card__detailed {
@@ -115,14 +117,14 @@ nav {
           border-bottom: solid 2px white;
         }
 
-        & > p:nth-child(2) {
+        & > div:nth-child(2) {
           margin-left: 30px;
           @include flexCenter(row);
           flex-wrap: wrap;
 
 
 
-          & > div:nth-child(2){
+          & > p:nth-child(2){
             margin: 0 0.5em;
           }
 
@@ -172,4 +174,20 @@ nav {
   padding: 10vw 0px;
   overflow-x: hidden;
   overflow-y: hidden;
+}
+
+.modal__wrapper{
+@include absolutefill;
+position: fixed;
+background-color: rgba(0, 0, 0, 0.2);;
+z-index: 99;
+
+.modal{
+@include absolutecenter;
+width: 50vw;
+height: 80vh;
+background-color: aqua;
+position: fixed;
+z-index: 99;
+}
 }

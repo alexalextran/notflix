@@ -8,6 +8,8 @@ import {
  CaretDownSquare,
   StarFill,
 } from "react-bootstrap-icons";
+import useToggle from "../CustomHooks/useToggle";
+import Modal from "./Modal";
 
 const Card = (props) => {
   const [data, setdata] = useState();
@@ -16,17 +18,36 @@ const Card = (props) => {
   const [runtime, setruntime] = useState();
   const [rating, setrating] = useState();
   const [loaded, setloaded] = useState(false);
+  const [value, toggleValue] = useToggle(false)
 
   const getDetails = async () => {
+    try{
+
+
+   
+
     try {
       var hehehaw = await axios.get(
         `https://api.themoviedb.org/3/movie/${props.id}?api_key=96b4f7f5b36d1f202a75b5f548cf311e&append_to_response=images&include_image_language=en`
       );
     } catch (error) {
+
+      try{
       var hehehaw = await axios.get(
         `https://api.themoviedb.org/3/tv/${props.id}?api_key=96b4f7f5b36d1f202a75b5f548cf311e&append_to_response=images&include_image_language=en`
       );
+      }catch(error){
+       
+      }
+
+
+
+
+
     }
+
+ 
+  
 
     setdata(hehehaw.data);
     setloaded(true);
@@ -57,7 +78,11 @@ const Card = (props) => {
     }
 
 
-  };
+  } catch (error){
+  
+  }
+}
+  
 
   useEffect(() => {
     getDetails();
@@ -89,20 +114,27 @@ const Card = (props) => {
               <HandThumbsDown />
             </div>
             <div>
-            <CaretDownSquare />
+            <CaretDownSquare onClick={() => {
+              toggleValue(true)
+              }
+
+
+
+
+              }/>
             </div>
               
             </div>
             <div className="card__detailed--ra-name">
               {loaded ? <p>{name}</p> : "loading"}
-              {loaded ? <p> {rating} <div className="star-icon"><StarFill/></div>
-              <div>{runtime}</div>
+              {loaded ? <div> {rating} <div className="star-icon"><StarFill/></div>
+              <p>{runtime}</p>
               
-              </p> : "loading"}
+              </div> : "loading"}
             </div>
                 { loaded ?
                 <ul>
-                   {( data.genres.slice(0,3).map(element =>
+                   {( data.genres.slice(0,3).map(element => 
                   <li>{element.name}</li>
                   ))}
                 </ul>
@@ -115,6 +147,11 @@ const Card = (props) => {
           </div>
         </div>
       </div>
+
+        {
+          value && <Modal />
+        }
+
     </>
   );
 };
