@@ -30,24 +30,22 @@ const Card = (props) => {
 
     setdata(hehehaw.data);
     setloaded(true);
-    console.log(data)
-  
-    if (data.images.backdrops.length !== 0) {
+
+    function logic(condition, setTo, setElse, exists){
+      if (condition !== exists) {
+          return(setTo);
+        } else {
+          return(setElse);
+        }
+  }
+
+    setrating(logic(data.vote_average, data.vote_average, "N/A", null))
+    setname(logic(data.title, data.title, data.name, undefined))
+    
+    if (data.images.backdrops[0] !== (null || undefined)) {
       setimg(data.images.backdrops[0].file_path);
     } else {
       setimg(props.img);
-    }
-
-    if (data.vote_average !== null || undefined) {
-      setrating(data.vote_average);
-    } else {
-      setrating("N/A");
-    }
-
-    if (data.original_name == undefined || null) {
-      setname(data.title);
-    } else {
-      setname(data.name);
     }
 
     if (data.runtime !== (null || undefined)) {
