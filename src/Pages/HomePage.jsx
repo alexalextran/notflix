@@ -23,7 +23,7 @@ const Homepage = () => {
          } 
          else if(type == "Korean"){
            
-             var {data} = (await axios.get(`https://api.themoviedb.org/3/discover/tv?api_key=96b4f7f5b36d1f202a75b5f548cf311e&language=ko&sort_by=popularity.desc&page=1&with_original_language=ko`))
+             var {data} = (await axios.get(`https://api.themoviedb.org/3/discover/tv?api_key=process.env.REACT_APP_API_KEY&language=ko&sort_by=popularity.desc&page=1&with_original_language=ko`))
 
               
             

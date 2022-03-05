@@ -19,6 +19,10 @@ const Card = (props) => {
   const [rating, setrating] = useState();
   const [loaded, setloaded] = useState(false);
   const [value, toggleValue] = useToggle(false)
+  const [date, setdate] = useState();
+const [popularity, setpopularity] = useState();
+const [ogLanguage, setogLanguage] = useState();
+const [overview, setoverview] = useState();
 
   const getDetails = async () => {
     try{
@@ -28,13 +32,13 @@ const Card = (props) => {
 
     try {
       var hehehaw = await axios.get(
-        `https://api.themoviedb.org/3/movie/${props.id}?api_key=96b4f7f5b36d1f202a75b5f548cf311e&append_to_response=images&include_image_language=en`
+        `https://api.themoviedb.org/3/movie/${props.id}?api_key=process.env.REACT_APP_API_KEY&append_to_response=images&include_image_language=en`
       );
     } catch (error) {
 
       try{
       var hehehaw = await axios.get(
-        `https://api.themoviedb.org/3/tv/${props.id}?api_key=96b4f7f5b36d1f202a75b5f548cf311e&append_to_response=images&include_image_language=en`
+        `https://api.themoviedb.org/3/tv/${props.id}?api_key=process.env.REACT_APP_API_KEY&append_to_response=images&include_image_language=en`
       );
       }catch(error){
        
@@ -51,6 +55,8 @@ const Card = (props) => {
 
     setdata(hehehaw.data);
     setloaded(true);
+    console.log(data)
+  
 
     function logic(condition, setTo, setElse, exists){
       if (condition !== exists) {
@@ -62,6 +68,11 @@ const Card = (props) => {
 
     setrating(logic(data.vote_average, data.vote_average, "N/A", null))
     setname(logic(data.title, data.title, data.name, undefined))
+    setdate(logic(data.release_date, data.release_date, data.first_air_date, undefined))
+    setpopularity(data.popularity)
+    setogLanguage(data.original_language)
+    setoverview(data.overview)
+    
     
     if (data.images.backdrops[0] !== (null || undefined)) {
       setimg(data.images.backdrops[0].file_path);
@@ -149,7 +160,7 @@ const Card = (props) => {
       </div>
 
         {
-          value && <Modal />
+          value && <Modal img={img} name={name} date={date.slice(0,4)} toggleValue={toggleValue} popularity={popularity} ogLanguage={ogLanguage} overview={overview}/>
         }
 
     </>

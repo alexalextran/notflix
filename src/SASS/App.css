@@ -247,7 +247,7 @@ nav img {
 }
 
 .card .card__detailed .card__detailed--bottom ul li {
-  margin-right: 2rem;
+  margin-right: 3em;
   list-style: circle;
   font-size: 0.7vw;
 }
@@ -284,8 +284,8 @@ nav img {
   left: 0;
   bottom: 0;
   position: fixed;
-  background-color: rgba(0, 0, 0, 0.2);
-  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 98;
 }
 
 .modal__wrapper .modal {
@@ -294,10 +294,54 @@ nav img {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  width: 50vw;
+  width: 40vw;
   height: 80vh;
-  background-color: aqua;
+  background-color: #1e1e1e;
   position: fixed;
   z-index: 99;
+}
+
+.modal__wrapper .modal .modal__text {
+  padding: 2em;
+  overflow-x: auto;
+}
+
+.modal__wrapper .modal .modal__text > p:nth-child(3) {
+  font-size: 1.4em;
+}
+
+.modal__wrapper .modal .gradient {
+  position: relative;
+}
+
+.modal__wrapper .modal .gradient > div {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 0, 0, 0)), to(#1e1e1e));
+  background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0), #1e1e1e);
+}
+
+.modal__wrapper .modal .gradient img {
+  width: 100%;
+}
+
+.modal__wrapper .modal .modal__details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.3em;
+}
+
+.modal__wrapper .modal .modal__details span {
+  color: #d2a100;
+  margin-right: 0.3em;
+}
+
+.modal__wrapper .modal .modal__details > p {
+  margin-right: 2em;
 }
 /*# sourceMappingURL=App.css.map */
