@@ -185,11 +185,12 @@ z-index: 98;
 .modal{
 @include absolutecenter;
 width:  clamp(400px, 40vw, 700px);
-height: clamp(600px, 80vh, 800px);
+height: clamp(400px, 80vh, 700px);
 background-color: $card;
 position: fixed;
 z-index: 99;
  overflow-x: auto;
+ border-radius: 10px;
 
  &::-webkit-scrollbar-track
 {

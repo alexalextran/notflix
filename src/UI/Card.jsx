@@ -55,7 +55,7 @@ const [overview, setoverview] = useState();
 
     setdata(hehehaw.data);
     setloaded(true);
-    console.log(data)
+    
   
 
     function logic(condition, setTo, setElse, exists){
