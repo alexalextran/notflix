@@ -32,13 +32,13 @@ const [overview, setoverview] = useState();
 
     try {
       var hehehaw = await axios.get(
-        `https://api.themoviedb.org/3/movie/${props.id}?api_key=process.env.REACT_APP_API_KEY&append_to_response=images&include_image_language=en`
+        `https://api.themoviedb.org/3/movie/${props.id}?api_key=${process.env.REACT_APP_API_KEY}&append_to_response=images&include_image_language=en`
       );
     } catch (error) {
 
       try{
       var hehehaw = await axios.get(
-        `https://api.themoviedb.org/3/tv/${props.id}?api_key=process.env.REACT_APP_API_KEY&append_to_response=images&include_image_language=en`
+        `https://api.themoviedb.org/3/tv/${props.id}?api_key=${process.env.REACT_APP_API_KEY}&append_to_response=images&include_image_language=en`
       );
       }catch(error){
        
