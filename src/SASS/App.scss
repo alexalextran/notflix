@@ -13,6 +13,7 @@ html {
 
 nav {
   @include flexCustom(space-between, center, row);
+  position: relative;
 
   .nav__right {
     @include flexCustom(space-around, center, row);
@@ -42,6 +43,13 @@ nav {
     width: clamp(100px, 5vw, 150px);
   
   }
+}
+
+
+
+video{
+  width: 100%;
+ 
 }
 
 .card {
@@ -109,12 +117,15 @@ nav {
         padding: 0 20px;
         text-align: left;
         font-size: 1.1em;
+        font-weight: 600;
+        
        
 
         & > p:nth-child(1) {
           color:  $red;
           border-top: solid 2px white;
           border-bottom: solid 2px white;
+          
         }
 
         & > div:nth-child(2) {
@@ -164,6 +175,7 @@ nav {
   margin: 0px 3vw;
   width: 100vw;
   height: fit-content;
+ 
 
   .tending__cards {
     display: flex;
@@ -171,9 +183,12 @@ nav {
 }
 
 .wrapper {
+  z-index: 70;
+  margin-top: 18vw;
   padding: 10vw 0px;
   overflow-x: hidden;
   overflow-y: hidden;
+
 }
 
 .modal__wrapper{
@@ -225,20 +240,7 @@ z-index: 99;
   }
 }
 
-.gradient{
-  position: relative;
-  & > div{
-    @include absolutefill;
-    z-index: 1;
-    background-image: linear-gradient(to bottom, rgba(255,0,0,0), rgba(30,30,30,1));
-   
 
-  }
-  img{
- 
-  width: 100%;
-}
-}
 
 
 
@@ -261,3 +263,61 @@ span{
 
 }
 }
+
+.gradient{
+  position: relative;
+  .gradient__color{
+    @include absolutefill;
+    background-image: linear-gradient(to bottom, rgba(255,0,0,0), rgba(30,30,30,1));
+  }
+  img{
+  width: 100%;
+}
+}
+
+.video__wrapper{
+  position: absolute;
+  z-index: -1;
+
+
+.video__wrapper--text{
+  letter-spacing: 0.4em;
+  font-size: 2vw;
+  width: fit-content;
+  position: absolute;
+  z-index: 90;
+  left: 3vw;
+  top: 10%;
+  text-shadow: 2px 2px $red;
+
+   button:nth-child(2){
+    @include landingpagetext;
+  }
+
+  button:nth-child(3){
+    @include landingpagetext;
+     margin-left: 1em;
+     background-color: rgba(99,94,95,0.5);
+     color: white;
+     cursor: pointer;
+    
+  
+ }
+
+
+ .icon{
+   margin-right: 10px;
+ }
+
+}
+
+  .gradient__main{
+    @extend .gradient;
+
+    
+  }
+}.gradient__main--color{
+      @extend .gradient__color;
+      background-image: linear-gradient(to bottom, rgba(255,0,0,0) 60%, rgba(20,20,20,1) 95%)  !important;
+     
+    }

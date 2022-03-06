@@ -17,7 +17,7 @@ const Modal = (props) => {
         
         <div className='modal'>
         <div className='gradient'>
-            <div></div>
+            <div className='gradient__color'></div>
              <img src={`https://image.tmdb.org/t/p/w500${props.img}`}></img>
         </div>
            

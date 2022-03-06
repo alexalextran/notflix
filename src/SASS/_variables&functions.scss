@@ -47,3 +47,24 @@ $font-stack: 'Source Sans Pro', sans-serif;
     visibility: visible;
     z-index: 2;
 }
+
+
+@mixin landingpagetext{
+    font-weight: 700;
+    font-size: 0.6em;
+    padding: 0.6vw 2.6vw;
+    border-radius: 0.2em;
+    outline: none;
+    border: none;
+    
+}
+
+@mixin clickable{
+    cursor: pointer;
+    transition: 300ms all;
+    
+
+    & :hover{
+        transform: scale(1.1);
+    }
+}

@@ -24,6 +24,7 @@ nav {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  position: relative;
 }
 
 nav .nav__right {
@@ -85,6 +86,10 @@ nav .navigation__links ul li {
 
 nav img {
   width: clamp(100px, 5vw, 150px);
+}
+
+video {
+  width: 100%;
 }
 
 .card {
@@ -193,6 +198,7 @@ nav img {
   padding: 0 20px;
   text-align: left;
   font-size: 1.1em;
+  font-weight: 600;
 }
 
 .card .card__detailed .card__detailed--bottom .card__detailed--ra-name > p:nth-child(1) {
@@ -272,6 +278,8 @@ nav img {
 }
 
 .wrapper {
+  z-index: 70;
+  margin-top: 18vw;
   padding: 10vw 0px;
   overflow-x: hidden;
   overflow-y: hidden;
@@ -331,25 +339,6 @@ nav img {
   font-size: 1em;
 }
 
-.modal__wrapper .modal .gradient {
-  position: relative;
-}
-
-.modal__wrapper .modal .gradient > div {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  z-index: 1;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 0, 0, 0)), to(#1e1e1e));
-  background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0), #1e1e1e);
-}
-
-.modal__wrapper .modal .gradient img {
-  width: 100%;
-}
-
 .modal__wrapper .modal .modal__details {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -364,5 +353,72 @@ nav img {
 
 .modal__wrapper .modal .modal__details > p {
   margin-right: 2em;
+}
+
+.gradient, .video__wrapper .gradient__main {
+  position: relative;
+}
+
+.gradient .gradient__color, .video__wrapper .gradient__main .gradient__color, .gradient .gradient__main--color, .video__wrapper .gradient__main .gradient__main--color {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 0, 0, 0)), to(#1e1e1e));
+  background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0), #1e1e1e);
+}
+
+.gradient img, .video__wrapper .gradient__main img {
+  width: 100%;
+}
+
+.video__wrapper {
+  position: absolute;
+  z-index: -1;
+}
+
+.video__wrapper .video__wrapper--text {
+  letter-spacing: 0.4em;
+  font-size: 2vw;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: absolute;
+  z-index: 90;
+  left: 3vw;
+  top: 10%;
+  text-shadow: 2px 2px #e50914;
+}
+
+.video__wrapper .video__wrapper--text button:nth-child(2) {
+  font-weight: 700;
+  font-size: 0.6em;
+  padding: 0.6vw 2.6vw;
+  border-radius: 0.2em;
+  outline: none;
+  border: none;
+}
+
+.video__wrapper .video__wrapper--text button:nth-child(3) {
+  font-weight: 700;
+  font-size: 0.6em;
+  padding: 0.6vw 2.6vw;
+  border-radius: 0.2em;
+  outline: none;
+  border: none;
+  margin-left: 1em;
+  background-color: rgba(99, 94, 95, 0.5);
+  color: white;
+  cursor: pointer;
+}
+
+.video__wrapper .video__wrapper--text .icon {
+  margin-right: 10px;
+}
+
+.gradient__main--color {
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(60%, rgba(255, 0, 0, 0)), color-stop(95%, #141414)) !important;
+  background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0) 60%, #141414 95%) !important;
 }
 /*# sourceMappingURL=App.css.map */
