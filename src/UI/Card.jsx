@@ -37,7 +37,7 @@ const [overview, setoverview] = useState();
     } catch (error) {
 
       try{
-      var hehehaw = await axios.get(
+        hehehaw = await axios.get(
         `https://api.themoviedb.org/3/tv/${props.id}?api_key=${process.env.REACT_APP_API_KEY}&append_to_response=images&include_image_language=en`
       );
       }catch(error){
@@ -56,22 +56,19 @@ const [overview, setoverview] = useState();
     setdata(hehehaw.data);
     setloaded(true);
     
-  
 
-    function logic(condition, setTo, setElse, exists){
-      if (condition !== exists) {
-          return(setTo);
-        } else {
-          return(setElse);
-        }
-  }
+  const { vote_average='N/A' } = data
+ setrating(vote_average)
 
-    setrating(logic(data.vote_average, data.vote_average, "N/A", null))
-    setname(logic(data.title, data.title, data.name, undefined))
-    setdate(logic(data.release_date, data.release_date, data.first_air_date, undefined))
-    setpopularity(data.popularity)
-    setogLanguage(data.original_language)
-    setoverview(data.overview)
+ const { title = data.name} = data
+setname(title)
+
+const { release_date = data.first_air_date} = data
+setdate(release_date)
+
+setpopularity(data.popularity)
+setogLanguage(data.original_language)
+setoverview(data.overview)
     
     
     if (data.images.backdrops[0] !== (null || undefined)) {
