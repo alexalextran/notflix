@@ -282,6 +282,22 @@ video {
   height: fit-content;
 }
 
+.trending .arrowRight {
+  font-size: 40px;
+  position: absolute;
+  z-index: 10;
+  right: 1%;
+  margin-top: 1em;
+  cursor: pointer;
+  -webkit-transition: 300ms all;
+  transition: 300ms all;
+}
+
+.trending .arrowRight :hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
 .trending .tending__cards {
   display: -webkit-box;
   display: -ms-flexbox;
