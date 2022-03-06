@@ -45,6 +45,17 @@ nav .nav__right {
   margin-right: 5rem;
 }
 
+nav .nav__right > * {
+  cursor: pointer;
+  -webkit-transition: 300ms all;
+  transition: 300ms all;
+}
+
+nav .nav__right > * :hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
 nav .navigation__links {
   display: -webkit-box;
   display: -ms-flexbox;
