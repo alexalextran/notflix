@@ -448,4 +448,36 @@ video {
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(60%, rgba(255, 0, 0, 0)), color-stop(95%, #141414)) !important;
   background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0) 60%, #141414 95%) !important;
 }
+
+.loading {
+  margin-right: 1vw;
+  background-color: #353333;
+  border-radius: 8px;
+  -webkit-animation: pulsategray 1s alternate infinite;
+          animation: pulsategray 1s alternate infinite;
+}
+
+@-webkit-keyframes pulsategray {
+  0% {
+    background-color: #353333;
+  }
+  100% {
+    background-color: #515151;
+  }
+}
+
+@keyframes pulsategray {
+  0% {
+    background-color: #353333;
+  }
+  100% {
+    background-color: #515151;
+  }
+}
+
+.loading > div {
+  width: 17vw;
+  opacity: 1;
+  height: 9vw;
+}
 /*# sourceMappingURL=App.css.map */

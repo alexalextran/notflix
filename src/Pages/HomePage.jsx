@@ -12,6 +12,7 @@ import marvelvideo from "../assets/marvel.mp4";
 import {
   CaretRightFill, InfoCircle
 } from "react-bootstrap-icons";
+import Loading from "../UI/Loading";
 
 const Homepage = () => {
   const gettrending = async (type) => {
@@ -38,7 +39,18 @@ const Homepage = () => {
 
   const skeleton = (state) => {
     if (state.length == 0) {
-      return "loading";
+    
+       
+      return  (<>
+      <Loading /><Loading /><Loading /><Loading /><Loading /> <Loading />
+      </>)
+      
+        
+        
+        
+
+
+
     } else {
       return state.map((element) => {
         if (element.media_type == "movie") {
@@ -49,11 +61,12 @@ const Homepage = () => {
 
         return (
           <Card
-            key={element.id}
-            id={element.id}
-            img={element.backdrop_path}
-            type={type}
-          />
+          key={element.id}
+          id={element.id}
+          img={element.backdrop_path}
+          type={type}
+        />
+        
         );
       });
     }

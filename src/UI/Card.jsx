@@ -106,7 +106,7 @@ const Card = (props) => {
               </div>
             </div>
             <div className="card__detailed--ra-name">
-              {loaded ? <p>{name}</p> : "loading"}
+              {loaded ? <p>{name}</p> : "loading..."}
               {loaded ? (
                 <div>
                   {" "}
@@ -117,7 +117,7 @@ const Card = (props) => {
                   <p>{runtime}</p>
                 </div>
               ) : (
-                "loading"
+                "loading..."
               )}
             </div>
             {loaded ? (
@@ -127,7 +127,7 @@ const Card = (props) => {
                 ))}
               </ul>
             ) : (
-              "loading"
+              "loading..."
             )}
           </div>
         </div>
