@@ -179,10 +179,15 @@ video{
   width: 100vw;
   height: fit-content;
 
+  .card__wrapper{
+    overflow-x: hidden;
+    
+  }
+
 
   .arrowRight{
     font-size: 2.6vw;
-    position: fixed;
+    position: absolute;
     z-index: 10;
     right: 1%;
     margin-top: 3.5%;

@@ -10,10 +10,10 @@ var right = 0
 const carousel = (e) => {
     
     if(e.target === arrowRef.current){
-        console.log(arrowRef.current.parentElement)
+        console.log(arrowRef.current.parentElement.children[1])
         right += 80
         console.log(right)
-        arrowRef.current.parentElement.style.transform = `translateX(-${right}vw)`
+        arrowRef.current.parentElement.children[1].style.transform = `translateX(-${right}vw)`
     }
 }
 
@@ -28,10 +28,10 @@ const carousel = (e) => {
 
         
         <div className='card__wrapper'>
-
+        <ChevronRight className='arrowRight' ref={arrowRef} onClick={carousel} />
         
         <div className='tending__cards'>
-        <ChevronRight className='arrowRight' ref={arrowRef} onClick={carousel} />
+        
             { 
                 props.loadingstate
             }
