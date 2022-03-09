@@ -177,7 +177,7 @@ video{
 
 .trending {
   font-size: 1vw;
-  margin: 6vw 3vw;
+  margin: 6vw 1vw;
   width: 100vw;
   height: fit-content;
 
@@ -194,6 +194,12 @@ video{
     right: 1%;
     margin-top: 3.5%;
     @include clickable;
+  }
+
+  .arrowLeft{
+    @extend .arrowRight;
+    left: 1%;
+    display: none;
   }
  
 

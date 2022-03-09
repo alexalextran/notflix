@@ -279,14 +279,14 @@ video {
 
 .trending {
   font-size: 1vw;
-  margin: 6vw 3vw;
+  margin: 6vw 1vw;
   width: 100vw;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }
 
-.trending .arrowRight {
+.trending .arrowRight, .trending .arrowLeft {
   font-size: 2.6vw;
   position: absolute;
   z-index: 10;
@@ -297,9 +297,14 @@ video {
   transition: 300ms all;
 }
 
-.trending .arrowRight :hover {
+.trending .arrowRight :hover, .trending .arrowLeft :hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+.trending .arrowLeft {
+  left: 1%;
+  display: none;
 }
 
 .trending .tending__cards {
