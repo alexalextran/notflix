@@ -105,7 +105,11 @@ video {
 
 .card {
   position: relative;
-  margin-right: 1vw;
+  margin-right: 3vw;
+  -webkit-transition: -webkit-transform 500ms;
+  transition: -webkit-transform 500ms;
+  transition: transform 500ms;
+  transition: transform 500ms, -webkit-transform 500ms;
 }
 
 .card > :first-child {
@@ -116,7 +120,7 @@ video {
 .card:hover > .card__detailed {
   opacity: 1;
   visibility: visible;
-  z-index: 2;
+  z-index: 4;
   height: 260%;
   width: 135%;
 }
@@ -275,15 +279,11 @@ video {
 
 .trending {
   font-size: 1vw;
-  margin: 0px 3vw;
+  margin: 6vw 3vw;
   width: 100vw;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-}
-
-.trending .card__wrapper {
-  overflow-x: hidden;
 }
 
 .trending .arrowRight {
@@ -306,8 +306,6 @@ video {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transition: all 1s;
-  transition: all 1s;
 }
 
 .wrapper {

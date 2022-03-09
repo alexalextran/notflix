@@ -45,7 +45,7 @@ $font-stack: 'Source Sans Pro', sans-serif;
 @mixin visible{
     opacity: 1;
     visibility: visible;
-    z-index: 2;
+    z-index: 4;
 }
 
 

@@ -57,7 +57,8 @@ video{
 
 .card {
   position: relative;
-  margin-right: 1vw;
+  margin-right: 3vw;
+  transition: transform 500ms;
   & > :first-child {
     width: 17vw;
     border-radius: 8px;
@@ -68,6 +69,7 @@ video{
     @include visible;
     height: 260%;
     width: 135%;
+  
   }
 
   .card__detailed {
@@ -175,12 +177,12 @@ video{
 
 .trending {
   font-size: 1vw;
-  margin: 0px 3vw;
+  margin: 6vw 3vw;
   width: 100vw;
   height: fit-content;
 
   .card__wrapper{
-    overflow-x: hidden;
+    
     
   }
 
@@ -197,7 +199,6 @@ video{
 
   .tending__cards {
     display: flex;
-    transition: all 1s;
   }
 }
 
