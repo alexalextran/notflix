@@ -17,13 +17,9 @@ nav {
 
   .nav__right {
     @include flexCustom(space-around, center, row);
-    width: 200px;
+    width: 40%;
     font-size: 22px;
     margin-right: 5rem;
-
-    & > *{
-      @include clickable
-    }
   }
 
   .navigation__links {
@@ -373,3 +369,30 @@ span{
       }
       
     }
+    .search__contain{
+      position: relative;
+      @include flexCustom(end, center, row);
+      width: 70%;
+    
+
+    #search{
+        width: 1.3em;
+        height: 1.3em;
+        padding: 1.3em;
+        border-radius: 1.3em;
+        border: white 2px solid;
+        background-color: rgb(0, 0, 0);
+        cursor: pointer;
+        transition: all 500ms;
+        color: white;
+        opacity: 0;
+
+     
+    }
+    #search__button{
+          position: absolute;
+          z-index: 2;
+          right: 1.6%;
+          cursor: pointer;
+        }
+      }

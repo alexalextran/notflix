@@ -1,10 +1,37 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Search, Bell, PersonSquare, CaretDown } from 'react-bootstrap-icons';
 import netflix from '../assets/netflix.svg'
+import useToggle from "../CustomHooks/useToggle";
 
-const Nav = () => {
+const Nav = (e) => {
+  const [value, toggleValue] = useToggle(true);
+  const search = useRef( document.getElementById('search'))
+
+  
+ 
+ 
+  const searchbar = () => {
+      toggleValue()
+  
+   if(value == true){
+    search.current.style.opacity= '1'
+     search.current.style.width= '80%'
+     search.current.style.paddingRight= '10%'
+     search.current.focus()
+   }
+   else{
+  
+    search.current.style.width= '1.3em'
+    search.current.style.paddingRight= '1.3em'
+    search.current.style.opacity= '0'
+   }
+     
+  }
+
+
+
   return (
-    <nav>
+    <nav >
       <div className="navigation__links">
         <img src={netflix}></img>
         <ul>
@@ -18,7 +45,12 @@ const Nav = () => {
       </div>
 
       <div className="nav__right">
-        <Search />
+        
+      <div className="search__contain">
+        <Search id="search__button"  onClick={searchbar}/>
+        <input type="text" id="search"  ref={search}  placeholder=""/>
+      </div>
+
        
         <a>Kids</a> 
         <Bell  />

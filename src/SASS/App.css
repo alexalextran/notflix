@@ -40,20 +40,9 @@ nav .nav__right {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  width: 200px;
+  width: 40%;
   font-size: 22px;
   margin-right: 5rem;
-}
-
-nav .nav__right > * {
-  cursor: pointer;
-  -webkit-transition: 300ms all;
-  transition: 300ms all;
-}
-
-nav .nav__right > * :hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
 }
 
 nav .navigation__links {
@@ -488,5 +477,44 @@ video {
   width: 17vw;
   opacity: 1;
   height: 9vw;
+}
+
+.search__contain {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 70%;
+}
+
+.search__contain #search {
+  width: 1.3em;
+  height: 1.3em;
+  padding: 1.3em;
+  border-radius: 1.3em;
+  border: white 2px solid;
+  background-color: black;
+  cursor: pointer;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+  color: white;
+  opacity: 0;
+}
+
+.search__contain #search__button {
+  position: absolute;
+  z-index: 2;
+  right: 1.6%;
+  cursor: pointer;
 }
 /*# sourceMappingURL=App.css.map */
