@@ -13,12 +13,12 @@ function App() {
     <div className="App">
       <AuthProvider>
         <Routes basename={process.env.PUBLIC_URL}> 
-          <Route path="/" exact element={<SignUpPage />} />
+          <Route path="/signup" exact element={<SignUpPage />} />
 
           <Route path="/login" exact element={<Loginpage />} />
 
-          <Route exact path="/home" element={<PrivateRoute />}>
-            <Route exact path="/home" element={<Homepage />} />
+          <Route exact path="/" element={<PrivateRoute />}>
+            <Route exact path="/" element={<Homepage />} />
           </Route>
           
         </Routes>

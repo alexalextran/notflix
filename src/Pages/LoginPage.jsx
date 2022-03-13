@@ -16,7 +16,7 @@ const Loginpage = () => {
         try{
             setloading(true)
          await login(emailRef.current.value, passwordRef.current.value)
-         navigate("/home");
+         navigate("/");
 
         } catch{
             window.alert("Failed To sign in!")
@@ -36,7 +36,7 @@ const Loginpage = () => {
         <button disabled={loading}>Log In</button>
         </form>
 
-        <p>Don't have an account? <Link to="/"><a id='signin__redirect'>Create an account here</a></Link></p>
+        <p>Don't have an account? <Link to="/signup"><a id='signin__redirect'>Create an account here</a></Link></p>
 
         </div>
         </section>
