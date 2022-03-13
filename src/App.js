@@ -18,7 +18,7 @@ function App() {
    
     <div className="App">
     <AuthProvider> 
-      <Routes>
+      <Routes basename={process.env.PUBLIC_URL}>
      
       <Route  
         path="/" exact element={<SignUpPage />} />
