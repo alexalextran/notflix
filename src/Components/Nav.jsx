@@ -5,7 +5,7 @@ import netflix from '../assets/netflix.svg'
 import { useAuth } from "../Contexts/AuthContext";
 import useToggle from "../CustomHooks/useToggle";
 
-const Nav = (e) => {
+const Nav = () => {
   const [value, toggleValue] = useToggle(true);
   const search = useRef( document.getElementById('search'))
   const { logout } = useAuth()
@@ -40,6 +40,20 @@ const Nav = (e) => {
       window.alert("Failed to logout!")
     }
   }
+
+  var myNav = document.getElementsByTagName('nav');
+  window.onscroll = function () { 
+    
+    if (document.body.scrollTop >= 200 || document.documentElement.scrollTop >= 200 ){
+          myNav[0].classList.add("nav-colored");
+          myNav[0].classList.remove("nav-transparent");
+         
+      } 
+      else {
+          myNav[0].classList.add("nav-transparent");
+          myNav[0].classList.remove("nav-colored");
+      }
+  };
 
 
 

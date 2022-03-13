@@ -10,6 +10,14 @@ html {
           box-sizing: border-box;
 }
 
+.nav-colored {
+  background-color: black;
+}
+
+.nav-transparent {
+  background-color: transparent;
+}
+
 nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -24,7 +32,12 @@ nav {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  position: relative;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 98;
+  -webkit-transition: background-color 500ms ease;
+  transition: background-color 500ms ease;
 }
 
 nav .nav__right {
@@ -304,8 +317,8 @@ video {
 
 .wrapper {
   z-index: 70;
-  margin-top: 18vw;
-  padding: 10vw 0px;
+  margin-top: -1vh;
+  padding: 22vw 0px;
   overflow-x: hidden;
   overflow-y: hidden;
 }
