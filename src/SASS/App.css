@@ -606,6 +606,7 @@ video {
   font-size: 1.2em;
   color: white;
   background-color: #e50914;
+  cursor: pointer;
 }
 
 .signupcard #signin__redirect {

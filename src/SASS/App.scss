@@ -437,11 +437,12 @@ span{
             font-size: 1.2em;
             color: white;
             background-color: $red;
+            cursor: pointer;
           }
         }
         #signin__redirect{
           cursor: pointer;
           font-weight: bold;
         }
-        
+
       }

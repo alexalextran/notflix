@@ -1,23 +1,25 @@
 import React, { useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import background from '../assets/signupbg.png'
 import { useAuth } from '../Contexts/AuthContext';
 
-
-const SignUpPage = () => {
+const Loginpage = () => {
     const emailRef = useRef()
     const passwordRef = useRef()
-    const { signup, currentUser } = useAuth()
+    const { login, currentUser } = useAuth()
     const [loading, setloading] = useState(false);
+    const navigate = useNavigate()
 
     async function handleSubmit(e){
         e.preventDefault()
 
         try{
             setloading(true)
-         await signup(emailRef.current.value, passwordRef.current.value) 
+         await login(emailRef.current.value, passwordRef.current.value)
+         navigate("/home");
+
         } catch{
-            window.alert("Failed To Create An Account!")
+            window.alert("Failed To sign in!")
         }
         setloading(false)
         
@@ -28,17 +30,17 @@ const SignUpPage = () => {
      { currentUser.email}
         <div className='signupcard'>
         <form onSubmit={handleSubmit}>
-        <h1>SignUp</h1>
+        <h1>Login</h1>
         <input placeholder='Email' required ref={emailRef}></input>
         <input placeholder='Password Minimum 6 characters' required ref={passwordRef}></input>
-        <button disabled={loading}>SignUp</button>
+        <button disabled={loading}>Log In</button>
         </form>
 
-        <p>Already Have An Account? <Link to="/login"><a id='signin__redirect'>Sign In here</a></Link></p>
+        <p>Don't have an account? <Link to="/"><a id='signin__redirect'>Create an account here</a></Link></p>
 
         </div>
         </section>
     );
 }
 
-export default SignUpPage;
+export default Loginpage;
