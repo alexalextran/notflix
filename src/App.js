@@ -6,10 +6,13 @@ import Homepage from './Pages/HomePage';
 import SignUpPage from './Pages/SignUpPage';
 import { AuthProvider } from './Contexts/AuthContext';
 import Loginpage from './Pages/LoginPage';
+import PrivateRoute from './PrivateRoute';
+
+
 
 function App() {
 
-
+ 
 
   return (
    
@@ -22,8 +25,9 @@ function App() {
         
         <Route path="/login" exact element={<Loginpage />} />
 
-        <Route  
-        path= "/home" exact element={<Homepage />} />
+        <Route exact path='/home' element={<PrivateRoute/>}>
+            <Route exact path='/home' element={<Homepage/>}/>
+          </Route>
       
       </Routes>
    </AuthProvider>

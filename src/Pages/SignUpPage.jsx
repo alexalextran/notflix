@@ -25,7 +25,7 @@ const SignUpPage = () => {
    
     return (
      <section className='signup' style={{backgroundImage: `url(${background})`}}>
-     { currentUser.email}
+    
         <div className='signupcard'>
         <form onSubmit={handleSubmit}>
         <h1>SignUp</h1>

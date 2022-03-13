@@ -15,7 +15,10 @@ import {
 import Loading from "../UI/Loading";
 import Nav from "../Components/Nav";
 
+
 const Homepage = () => {
+
+
   const gettrending = async (type) => {
     if (type == "tending") {
       var { data } = await axios.get(
