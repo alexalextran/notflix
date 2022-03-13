@@ -473,3 +473,7 @@ span{
          color: $gray;
        }
      }
+
+     #thumbsup, #thumbsdown{
+       transition: color 300ms;
+     }
