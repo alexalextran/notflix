@@ -1,39 +1,30 @@
-
-import React from 'react';
-import './SASS/App.css';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Homepage from './Pages/HomePage';
-import SignUpPage from './Pages/SignUpPage';
-import { AuthProvider } from './Contexts/AuthContext';
-import Loginpage from './Pages/LoginPage';
-import PrivateRoute from './PrivateRoute';
-
-
+import React from "react";
+import "./SASS/App.css";
+import { BrowserRouter as Router, Routes, Route, BrowserRouter } from "react-router-dom";
+import Homepage from "./Pages/HomePage";
+import SignUpPage from "./Pages/SignUpPage";
+import { AuthProvider } from "./Contexts/AuthContext";
+import Loginpage from "./Pages/LoginPage";
+import PrivateRoute from "./PrivateRoute";
 
 function App() {
-
- 
-
   return (
-   
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
     <div className="App">
-    <AuthProvider> 
-      <Routes basename={process.env.PUBLIC_URL}>
-     
-      <Route  
-        path="/" exact element={<SignUpPage />} />
-        
-        <Route path="/login" exact element={<Loginpage />} />
+      <AuthProvider>
+        <Routes basename={process.env.PUBLIC_URL}> 
+          <Route path="/" exact element={<SignUpPage />} />
 
-        <Route exact path='/home' element={<PrivateRoute/>}>
-            <Route exact path='/home' element={<Homepage/>}/>
+          <Route path="/login" exact element={<Loginpage />} />
+
+          <Route exact path="/home" element={<PrivateRoute />}>
+            <Route exact path="/home" element={<Homepage />} />
           </Route>
-      
-      </Routes>
-   </AuthProvider>
-  
+          
+        </Routes>
+      </AuthProvider>
     </div>
-
+   </BrowserRouter>
   );
 }
 
