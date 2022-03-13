@@ -41,6 +41,8 @@ nav {
       li {
         list-style: none;
         margin-right: 1.5rem;
+        padding: 0.5em 0px;
+        cursor:not-allowed;
       }
     }
   }
@@ -179,7 +181,7 @@ video{
 
 .trending {
   font-size: 1vw;
-  margin: 6vw 1vw;
+  margin: 5vw 1vw;
   width: 100vw;
   height: fit-content;
 
@@ -196,6 +198,7 @@ video{
     right: 1%;
     margin-top: 3.5%;
     @include clickable;
+    color: red
   }
 
   .arrowLeft{
@@ -214,6 +217,7 @@ video{
   z-index: 70;
   margin-top: -1vh;
   padding: 22vw 0px;
+  padding-bottom: 4vw;
   overflow-x: hidden;
   overflow-y: hidden;
  
@@ -454,4 +458,18 @@ span{
 
       }
 
-     
+     footer{
+       @include flexCenter(column);
+       div{
+         @include flexCenter(row);
+       }
+       
+      ul{
+        @include flexCenter(column);
+      }
+       li{
+         padding: 1em 2em;
+         list-style: none;
+         color: $gray;
+       }
+     }

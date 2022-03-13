@@ -95,6 +95,8 @@ nav .navigation__links ul {
 nav .navigation__links ul li {
   list-style: none;
   margin-right: 1.5rem;
+  padding: 0.5em 0px;
+  cursor: not-allowed;
 }
 
 nav img {
@@ -281,7 +283,7 @@ video {
 
 .trending {
   font-size: 1vw;
-  margin: 6vw 1vw;
+  margin: 5vw 1vw;
   width: 100vw;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -297,6 +299,7 @@ video {
   cursor: pointer;
   -webkit-transition: 300ms all;
   transition: 300ms all;
+  color: red;
 }
 
 .trending .arrowRight :hover, .trending .arrowLeft :hover {
@@ -319,6 +322,7 @@ video {
   z-index: 70;
   margin-top: -1vh;
   padding: 22vw 0px;
+  padding-bottom: 4vw;
   overflow-x: hidden;
   overflow-y: hidden;
 }
@@ -625,5 +629,59 @@ video {
 .signupcard #signin__redirect {
   cursor: pointer;
   font-weight: bold;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+footer div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+footer ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+footer li {
+  padding: 1em 2em;
+  list-style: none;
+  color: #4d4d4d;
 }
 /*# sourceMappingURL=App.css.map */

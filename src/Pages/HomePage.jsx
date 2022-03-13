@@ -14,6 +14,7 @@ import {
 } from "react-bootstrap-icons";
 import Loading from "../UI/Loading";
 import Nav from "../Components/Nav";
+import Footer from "../Components/Footer";
 
 
 const Homepage = () => {
@@ -139,6 +140,7 @@ const Homepage = () => {
           search={"16"}
         />
       </div>
+      <Footer />
     </>
   );
 };
