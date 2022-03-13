@@ -13,6 +13,7 @@ import {
   CaretRightFill, InfoCircle
 } from "react-bootstrap-icons";
 import Loading from "../UI/Loading";
+import Nav from "../Components/Nav";
 
 const Homepage = () => {
   const gettrending = async (type) => {
@@ -74,6 +75,7 @@ const Homepage = () => {
 
   return (
     <>
+       <Nav />
       <div className="video__wrapper">
       <div className="video__wrapper--text">
         <h1>Avengers Infinity War</h1>
