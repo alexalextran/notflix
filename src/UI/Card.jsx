@@ -24,6 +24,7 @@ const Card = (props) => {
   const [ogLanguage, setogLanguage] = useState();
   const [overview, setoverview] = useState();
 
+
   const getDetails = async () => {
     try {
       try {
@@ -72,6 +73,26 @@ const Card = (props) => {
     getDetails();
   }, [loaded]);
 
+function cardicons(e){
+  if(e.target.id == "thumbsup"){
+    if(e.target.style.color == "green"){
+      e.target.style.color = "white"
+    }
+    else{
+      e.target.style.color = "green"
+    }
+    
+  } else{
+    if(e.target.style.color == "red"){
+      e.target.style.color = "white"
+    }
+    else{
+      e.target.style.color = "red"
+    }
+    
+  }
+}
+
   return (
     <>
       <div className="card">
@@ -94,8 +115,8 @@ const Card = (props) => {
               <div>
                 <PlayCircleFill />
                 <PlusCircle />
-                <HandThumbsUp />
-                <HandThumbsDown />
+                <HandThumbsUp onClick={cardicons} id="thumbsup"/>
+                <HandThumbsDown onClick={cardicons} id="thumbsdown"/>
               </div>
               <div>
                 <CaretDownSquare
