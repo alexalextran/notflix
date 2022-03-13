@@ -3,6 +3,7 @@ $card: rgb(30,30,30);
 $mainTextColor: rgb(221,221,221);
 $star: rgb(210,161,0);
 $red: rgb(229, 9, 20);
+$gray: rgb(77,77,77);
 
 $font-stack: 'Source Sans Pro', sans-serif;
 
@@ -57,6 +58,12 @@ $font-stack: 'Source Sans Pro', sans-serif;
     outline: none;
     border: none;
     
+}
+
+@mixin input{
+    outline: none;
+    border: none;
+    border-radius: 0.4em;
 }
 
 @mixin clickable{

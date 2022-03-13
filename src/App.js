@@ -3,8 +3,7 @@ import React from 'react';
 import './SASS/App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Homepage from './Pages/HomePage';
-import Nav from './Components/Nav';
-import Loginpage from './Pages/LoginPage';
+import SignUpPage from './Pages/SignUpPage';
 
 function App() {
 
@@ -16,7 +15,7 @@ function App() {
    
       <Routes> 
       <Route  
-        path="/" exact element={<Loginpage />} />
+        path="/" exact element={<SignUpPage />} />
 
         <Route  
         path= "/home" exact element={<Homepage />} />
