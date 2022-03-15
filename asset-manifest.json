@@ -1,18 +1,19 @@
 {
   "files": {
-    "main.css": "/notflix/static/css/main.f01f7a67.css",
-    "main.js": "/notflix/static/js/main.c95c76cb.js",
+    "main.css": "/notflix/static/css/main.4d495ee2.css",
+    "main.js": "/notflix/static/js/main.5b559f40.js",
     "static/js/787.089d247b.chunk.js": "/notflix/static/js/787.089d247b.chunk.js",
     "static/media/marvel.mp4": "/notflix/static/media/marvel.c434f357ce0d68f1c66a.mp4",
     "static/media/signupbg.png": "/notflix/static/media/signupbg.247f90de1d29e4740369.png",
+    "static/media/frog.png": "/notflix/static/media/frog.daaed11bf7315596e450.png",
     "static/media/netflix.svg": "/notflix/static/media/netflix.c8479ece65f26b534b403d0973ab101d.svg",
     "index.html": "/notflix/index.html",
-    "main.f01f7a67.css.map": "/notflix/static/css/main.f01f7a67.css.map",
-    "main.c95c76cb.js.map": "/notflix/static/js/main.c95c76cb.js.map",
+    "main.4d495ee2.css.map": "/notflix/static/css/main.4d495ee2.css.map",
+    "main.5b559f40.js.map": "/notflix/static/js/main.5b559f40.js.map",
     "787.089d247b.chunk.js.map": "/notflix/static/js/787.089d247b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f01f7a67.css",
-    "static/js/main.c95c76cb.js"
+    "static/css/main.4d495ee2.css",
+    "static/js/main.5b559f40.js"
   ]
 }
