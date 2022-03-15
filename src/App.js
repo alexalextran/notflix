@@ -6,6 +6,7 @@ import SignUpPage from "./Pages/SignUpPage";
 import { AuthProvider } from "./Contexts/AuthContext";
 import Loginpage from "./Pages/LoginPage";
 import PrivateRoute from "./PrivateRoute";
+import Fourofour from "./Pages/fourOfour";
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
           <Route path="/signup" exact element={<SignUpPage />} />
 
           <Route path="/login" exact element={<Loginpage />} />
+
+          <Route path="*" exact element={<Fourofour />} />
 
           <Route exact path="/" element={<PrivateRoute />}>
             <Route exact path="/" element={<Homepage />} />
