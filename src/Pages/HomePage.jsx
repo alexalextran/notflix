@@ -15,9 +15,23 @@ import {
 import Loading from "../UI/Loading";
 import Nav from "../Components/Nav";
 import Footer from "../Components/Footer";
+import { useAuth } from "../Contexts/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 
 const Homepage = () => {
+  const { logout } = useAuth()
+  const navigate = useNavigate()
+
+  async function handleLogout(){
+    try{
+      await logout()
+      navigate("/");
+    }catch(e){
+      console.log(e)
+      window.alert("Failed to logout!")
+    }
+  }
 
 
   const gettrending = async (type) => {
@@ -141,6 +155,8 @@ const Homepage = () => {
         />
       </div>
       <Footer />
+      <div className="smaller_screen_size">Sorry this webpage is not supported on smaller screen sizes
+      <a className="logout" onClick={handleLogout}>Log Out</a></div>
     </>
   );
 };

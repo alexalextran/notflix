@@ -83,7 +83,7 @@ const Nav = () => {
         <Bell  />
         <PersonSquare  /> 
             
-        <a onClick={handleLogout}>Log Out</a>
+        <a className="logout" onClick={handleLogout}>Log Out</a>
        </div>
     
  
