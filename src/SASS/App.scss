@@ -484,6 +484,10 @@ span{
        transition: color 300ms;
      }
 
+     .unclickable{
+       cursor:not-allowed;
+     }
+
      .smaller_screen_size{
        display: none;
        z-index: 1000;

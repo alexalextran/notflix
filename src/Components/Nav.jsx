@@ -79,9 +79,9 @@ const Nav = () => {
       </div>
 
        
-        <a>Kids</a> 
-        <Bell  />
-        <PersonSquare  /> 
+        <a className="unclickable">Kids</a> 
+        <Bell className="unclickable" />
+        <PersonSquare className="unclickable" /> 
             
         <a className="logout" onClick={handleLogout}>Log Out</a>
        </div>
