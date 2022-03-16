@@ -65,7 +65,7 @@ const Nav = () => {
           <li>Home</li>
           <li>Tv Shows</li>
           <li>Movies</li>
-          <li>New&Popular</li>
+          <li>New & Popular</li>
           <li>My List</li>
         </ul>
 
